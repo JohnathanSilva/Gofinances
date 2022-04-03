@@ -16,5 +16,13 @@ export default {
         text: '#969CB2',
         backgruond: '#F0F2F5',
 
-    }
+    },
+    fonts:{
+        regular: 'Poppins_400Regular',
+        medium: 'Poppins_500Medium',
+        blod: 'Poppins_700Bold', 
+    },
 }
+
+     
+    
