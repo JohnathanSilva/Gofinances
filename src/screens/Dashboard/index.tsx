@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container, Header, UserWapper, UserInfo, Photo, User, UserGreeting, UserName} from "./styles";
+import { Container, Header, UserWapper, UserInfo, Photo, User, UserGreeting, UserName, Icon} from "./styles";
 
 export function Dashboard(){
     return(
@@ -14,6 +14,7 @@ export function Dashboard(){
                             <UserName>Johanthan</UserName>
                         </User>
                     </UserInfo>
+                    <Icon name="power"/>
                 </UserWapper>
             </Header>
         </Container>
