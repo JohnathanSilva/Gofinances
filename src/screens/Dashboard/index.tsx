@@ -1,7 +1,21 @@
 import React from "react";
 import { HighlightCard } from "../../components/HighlightCard/";
+import { TransactionCard } from "../../components/TransactionCard";
 
-import { Container, Header, UserWapper, UserInfo, Photo, User, UserGreeting, UserName, Icon, HighlightCards} from "./styles";
+import { 
+    Container, 
+    Header, 
+    UserWapper, 
+    UserInfo, 
+    Photo, 
+    User, 
+    UserGreeting, 
+    UserName, 
+    Icon, 
+    HighlightCards, 
+    Transaction, 
+    Title
+} from "./styles";
 
 export function Dashboard(){
     return(
@@ -19,10 +33,30 @@ export function Dashboard(){
                 </UserWapper>
             </Header>
             <HighlightCards>
-                <HighlightCard />
-                <HighlightCard />
-                <HighlightCard />
+                <HighlightCard 
+                    type="up"
+                    title="Entradas"
+                    amount="R$ 17.400,00"
+                    lastTransaction="Última entrada dia 13 de abril"
+                />
+                <HighlightCard
+                    type="down" 
+                    title="Saídas"
+                    amount="R$ 1.250,00"
+                    lastTransaction="Última saída dia 13 de abril"
+                />
+                <HighlightCard 
+                    type="total"
+                    title="Total"
+                    amount="R$ 16.141,00"
+                    lastTransaction="01 à 16 abril"
+                />
             </HighlightCards>
+            <Transaction>
+                <Title>Listagem</Title>
+
+                <TransactionCard />
+            </Transaction>
         </Container>
     );
 }
