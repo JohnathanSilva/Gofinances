@@ -98,8 +98,8 @@ export function Dashboard(){
                     
                     <TransactionList 
                         data={data}
-                        Extractor={ item => item.id}
-                        renderItem={({ item }) => <TransactionCard data={ item } />}
+                        renderItem={({ item }:{item : DataListProps}) => <TransactionCard data={ item } />}
+                        Extractor={({ item}:{item: DataListProps})  => item.id}
                         showsVerticalScrollIndicator={false}
                     />
                 </Transaction>
