@@ -23,8 +23,8 @@ export function HighlightCard( {type, title, amount, lastTransaction} :Props){
                     {title}
                 </Title>
                 <Icon 
-                    name={icon[type]} 
                     type={type} 
+                    name={icon[type]} 
                 />
             </Header>
             <Footer>
