@@ -6,7 +6,7 @@ import { useFonts, Poppins_400Regular, Poppins_500Medium, Poppins_700Bold} from 
 
 
 import theme  from './src/Global/styles/theme';
-import { CategorySelect } from './src/screens/CategorySelect';
+import { Register } from './src/screens/Register';
 
 
 
@@ -27,7 +27,7 @@ export default function App() {
         style='light'
         translucent
       />
-      <CategorySelect />
+      <Register />
     </ThemeProvider> 
   );
 }
