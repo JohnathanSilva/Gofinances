@@ -6,7 +6,8 @@ import { useFonts, Poppins_400Regular, Poppins_500Medium, Poppins_700Bold} from 
 
 
 import theme  from './src/Global/styles/theme';
-import { Register } from './src/screens/Register';
+import { NavigationContainer } from '@react-navigation/native';
+import { AppRoutes } from './src/routes/app.routes';
 
 
 
@@ -27,7 +28,9 @@ export default function App() {
         style='light'
         translucent
       />
-      <Register />
+      <NavigationContainer>
+        <AppRoutes />
+      </NavigationContainer>
     </ThemeProvider> 
   );
 }
