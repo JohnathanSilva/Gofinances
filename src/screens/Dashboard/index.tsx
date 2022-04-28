@@ -10,7 +10,8 @@ import {
     Photo, 
     User, 
     UserGreeting, 
-    UserName, 
+    UserName,
+    LogoutButton, 
     Icon, 
     HighlightCards, 
     Transaction, 
@@ -70,7 +71,9 @@ export function Dashboard(){
                             <UserName>Johanthan</UserName>
                         </User>
                     </UserInfo>
-                    <Icon name="power"/>
+                    <LogoutButton onPress={() => {}}>
+                        <Icon name="power"/>
+                    </LogoutButton>
                 </UserWapper>
             </Header>
             <HighlightCards>
