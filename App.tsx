@@ -1,5 +1,8 @@
+import 'intl';
+import 'intl/locale-data/jsonp/pt-BR';
+
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
+import { StatusBar } from 'react-native';
 import { ThemeProvider } from 'styled-components';
 import AppLoading from 'expo-app-loading';
 import { useFonts, Poppins_400Regular, Poppins_500Medium, Poppins_700Bold} from '@expo-google-fonts/poppins';
@@ -24,10 +27,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <StatusBar 
-        style='light'
-        translucent
-      />
+      <StatusBar barStyle={'light-content'} backgroundColor={'#5636D3'}/>
       <NavigationContainer>
         <AppRoutes />
       </NavigationContainer>

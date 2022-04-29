@@ -4,6 +4,7 @@ import { Feather } from '@expo/vector-icons';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import { BorderlessButton } from 'react-native-gesture-handler';
 
+
 import { DataListProps } from '.';
 
 export const Container = styled.View`
@@ -100,4 +101,4 @@ export const Title = styled.Text`
 
 export const TransactionList = styled(
     FlatList as new () => FlatList<DataListProps>
-    )``;
+    )``as unknown as typeof FlatList;
