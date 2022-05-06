@@ -21,7 +21,7 @@ export default {
     fonts:{
         regular: 'Poppins_400Regular',
         medium: 'Poppins_500Medium',
-        blod: 'Poppins_700Bold', 
+        bold: 'Poppins_700Bold', 
     },
 }
 

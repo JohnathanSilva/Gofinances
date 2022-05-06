@@ -60,7 +60,7 @@ export const UserGreeting = styled.Text`
 
 export const UserName = styled.Text`
     font-size: ${RFValue(18)}px;
-    font-family: ${({ theme }) => theme.fonts.blod};
+    font-family: ${({ theme }) => theme.fonts.bold};
     
     color: ${({ theme }) => theme.colors.shape};
 `;
