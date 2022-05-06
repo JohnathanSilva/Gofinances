@@ -27,10 +27,6 @@ export const Title = styled.Text`
     color: ${({ theme }) => theme.colors.shape};
 `;
 
-export const Form = styled.View`
-    flex: 1;
-
-    padding: 0 24px 31px;
-
-    justify-content: flex-end;
-`;
+export const Content = styled.ScrollView.attrs({
+    contentContainerStyle: { flex: 1, padding: 24 }
+})``;
