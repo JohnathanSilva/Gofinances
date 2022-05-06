@@ -102,3 +102,10 @@ export const Title = styled.Text`
 export const TransactionList = styled(
     FlatList as new () => FlatList<DataListProps>
     )``as unknown as typeof FlatList;
+
+
+export const LoadContainer = styled.View`
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+`;
