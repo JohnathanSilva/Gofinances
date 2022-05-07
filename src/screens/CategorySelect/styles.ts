@@ -9,7 +9,7 @@ interface CategoryProps {
  
 export const Container = styled.View`
     flex: 1;
-    background-color: ${({ theme }) => theme.colors.backgruond};
+    background-color: ${({ theme }) => theme.colors.background};
 `;
 
 export const Header = styled.View`
@@ -37,7 +37,7 @@ export const Category = styled.TouchableOpacity<CategoryProps>`
     align-items: center;
 
     background-color: ${({ isActive }) => 
-        isActive ? theme.colors.secondary_light : theme.colors.backgruond
+        isActive ? theme.colors.secondary_light : theme.colors.background
     };
 `;
 

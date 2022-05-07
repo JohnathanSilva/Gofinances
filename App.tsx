@@ -27,8 +27,8 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <StatusBar barStyle={'light-content'} backgroundColor={'#5636D3'}/>
       <NavigationContainer>
+      <StatusBar barStyle={'light-content'} backgroundColor={'#5636D3'}/>
         <AppRoutes />
       </NavigationContainer>
     </ThemeProvider> 
