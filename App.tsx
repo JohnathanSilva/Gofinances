@@ -7,6 +7,7 @@ import { ThemeProvider } from 'styled-components';
 import AppLoading from 'expo-app-loading';
 import { useFonts, Poppins_400Regular, Poppins_500Medium, Poppins_700Bold} from '@expo-google-fonts/poppins';
 
+import { GestureHandlerRootView } from 'react-native-gesture-handler'; 
 
 import theme  from './src/Global/styles/theme';
 import { NavigationContainer } from '@react-navigation/native';
@@ -26,11 +27,13 @@ export default function App() {
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <NavigationContainer>
-      <StatusBar barStyle={'light-content'} backgroundColor={'#5636D3'}/>
-        <AppRoutes />
-      </NavigationContainer>
-    </ThemeProvider> 
+    <GestureHandlerRootView style={{flex: 1}}>
+      <ThemeProvider theme={theme}>
+        <NavigationContainer>
+        <StatusBar barStyle={'light-content'} backgroundColor={'#5636D3'}/>
+          <AppRoutes />
+        </NavigationContainer>
+      </ThemeProvider>
+    </GestureHandlerRootView> 
   );
 }

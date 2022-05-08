@@ -51,7 +51,7 @@ export function Resume(){
 
     function handleDateChange(action: 'next' | 'prev'){
         if(action === 'next'){
-            setSelectedDate(addMonths(selectedDate, 2));
+            setSelectedDate(addMonths(selectedDate, 1));
            
         }else{
             setSelectedDate(subMonths(selectedDate, 1));
