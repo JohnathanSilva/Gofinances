@@ -27,7 +27,7 @@ export function SignIn(){
 
     async function handleSignInWithApple() {
         try {
-            await signInWithApple
+            await signInWithApple();
         } catch (error) {
             console.log(error);
             Alert.alert('Não foi possível conectar a conta Apple');

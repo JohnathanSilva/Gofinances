@@ -22,6 +22,8 @@ interface IAuthContextData {
     user: User;
     signInWithGoogle(): Promise<void>;
     signInWithApple(): Promise<void>;
+    signOut(): Promise<void>;
+    userLoading: boolean;
 }
 
 interface AuthResponse{
@@ -35,7 +37,7 @@ export const AuthContext = createContext({} as IAuthContextData);
 
 function AuthProvider({children}: AuthProvaiderProps) {
     const [user, setUser] = useState<User>({} as User);
-    const [isLoading, setIsloading] = useState(true);
+    const [userLoading, setUserloading] = useState(true);
     const userStoragekey = '@gofinances:user';
 
     async function signInWithGoogle(){
@@ -73,11 +75,14 @@ function AuthProvider({children}: AuthProvaiderProps) {
             });
 
             if(credential){
+                const name = credential.fullName?.givenName!;
+                const photo = `https://ui-avatars.com/api/?name=${name}&length=1`;
+                
                 const userInfo = {
                     id: String(credential.user),
                     email: credential.email!,
-                    name: credential.fullName?.givenName!,
-                    photo: undefined
+                    name,
+                    photo,
                 }
                 setUser(userInfo);
                 await AsyncStorage.setItem(userStoragekey, JSON.stringify(userInfo));
@@ -86,6 +91,11 @@ function AuthProvider({children}: AuthProvaiderProps) {
         } catch (error) {
             throw new Error(error as string);
         }
+    }
+
+    async function signOut() {
+        setUser({} as User);
+        await AsyncStorage.removeItem(userStoragekey);
     }
     
     useEffect(() => {
@@ -96,13 +106,13 @@ function AuthProvider({children}: AuthProvaiderProps) {
                 const userLogged = JSON.parse(userStorage) as User;
                 setUser(userLogged);
             }
-            setIsloading(false);
+            setUserloading(false);
         }
         loadUserStorage();    
     }, []);
 
     return(
-        <AuthContext.Provider value={{ user, signInWithGoogle, signInWithApple }}>
+        <AuthContext.Provider value={{ user, signInWithGoogle, signInWithApple, signOut, userLoading}}>
           {children}
         </AuthContext.Provider>)
 }
