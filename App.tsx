@@ -10,9 +10,7 @@ import { useFonts, Poppins_400Regular, Poppins_500Medium, Poppins_700Bold} from 
 import { GestureHandlerRootView } from 'react-native-gesture-handler'; 
 
 import theme  from './src/Global/styles/theme';
-import { NavigationContainer } from '@react-navigation/native';
-//import { AppRoutes } from './src/routes/app.routes';
-import { SignIn } from './src/screens/SignIn';
+import { Routes } from './src/routes';
 
 import { AuthProvider } from './src/hooks/auth';
 
@@ -30,14 +28,10 @@ export default function App() {
   return (
     <GestureHandlerRootView style={{flex: 1}}>
       <ThemeProvider theme={theme}>
-        <NavigationContainer>
-        <StatusBar barStyle={'light-content'} backgroundColor={'#5636D3'}/>
-        
+        <StatusBar barStyle={'light-content'} backgroundColor={'#5636D3'}/>        
         <AuthProvider>
-          <SignIn />
+          <Routes />
         </AuthProvider>
-        
-        </NavigationContainer>
       </ThemeProvider>
     </GestureHandlerRootView> 
   );
